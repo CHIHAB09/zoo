@@ -17,6 +17,12 @@ use App\Http\Controllers\PostController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/horaireParc', function () {
+    return view('horaireParc');
+})->name('horaire'); 
+Route::get('/horaireAliment', function () {
+    return view('horaireAliment');
+});
 
 /* Route::get('/posts', function() {
     return response()->json([
@@ -25,6 +31,3 @@ Route::get('/', function () {
     ]);
 });
 */
-Route::get('/horraireNourriture', function () {
-    return view('horraireNourriture');
-}); 

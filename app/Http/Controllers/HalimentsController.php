@@ -8,6 +8,6 @@ class HalimentsController extends Controller
 {
     public function index()
     {
-        
+        return view('horraireAliment');
     }
 }

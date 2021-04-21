@@ -8,6 +8,6 @@ class HoraireParcController extends Controller
 {
     public function index()
     {
-        
+        return view('horaire');
     }
 }
