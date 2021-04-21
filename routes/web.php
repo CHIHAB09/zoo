@@ -14,7 +14,9 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', [PostController::class,'index']);
+Route::get('/', function () {
+    return view('welcome');
+});
 
 /* Route::get('/posts', function() {
     return response()->json([
@@ -22,7 +24,7 @@ Route::get('/', [PostController::class,'index']);
         'description' => 'different chemin'
     ]);
 });
-
-Route::get('articles', function () {
-    return view('articles');
-}); */
+*/
+Route::get('/horraireNourriture', function () {
+    return view('horraireNourriture');
+}); 
