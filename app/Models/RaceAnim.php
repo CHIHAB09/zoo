@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class RaceAnim extends Model
 {
     use HasFactory;
+
+
+
+    public function animalRace()
+    {
+        return $this->belongsTo(Animaux::class);
+    }
 }

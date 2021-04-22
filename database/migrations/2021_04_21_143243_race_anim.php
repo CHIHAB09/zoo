@@ -15,8 +15,9 @@ class RaceAnim extends Migration
     {
         Schema::create('raceAnim', function (Blueprint $table) {
             $table->id();
-            $table->string('genre');
-            $table->int('nbAnimaux');
+            $table->string('familleAnimaux');/*mamifere,poisson,reptile*/
+            $table->integer('nbAnimaux');
+            $table->integer('ageMaturite');
         });
     }
 

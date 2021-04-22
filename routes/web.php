@@ -23,6 +23,19 @@ Route::get('/horaireParc', function () {
 Route::get('/horaireAliment', function () {
     return view('horaireAliment');
 });
+Route::get('/medical', function () {
+
+    $animalSoin= new App\Models\Animaux();
+    $animalSoin->name = "Tomy le Gorille";
+
+    $medicaux= new App\Models\Medicals();
+    $medicaux->rapportMedical ="Premier diagnostic";
+    $medicaux->dateRapport = '2021-04-22';
+    $medicaux->animal_id = 5;
+
+    $medicaux->save(); 
+    var_dump($medicaux);
+});
 
 /* Route::get('/posts', function() {
     return response()->json([

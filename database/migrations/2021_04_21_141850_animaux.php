@@ -16,12 +16,12 @@ class Animaux extends Migration
         Schema::create('animaux', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->timestamp('dateEntrer');
-            $table->timestamp('dateSortit');
-            $table->int('age');
+            $table->timestamp('dateEntrer')->nullable();
+            $table->timestamp('dateSortie')->nullable();
+            $table->timestamp('dateNaissance')->nullable();
             $table->string('sexe');
-            $table->int('poids');
-            $table->bool('sortieCage');
+            $table->integer('poids');
+            $table->boolean('sortieCage');
         });
     }
 

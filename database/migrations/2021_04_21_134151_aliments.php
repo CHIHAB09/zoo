@@ -16,7 +16,7 @@ class Aliments extends Migration
         Schema::create('aliments', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->int('quantite');
+            $table->integer('quantite'); /* les mesures seront en kilo*/
         });
     }
 

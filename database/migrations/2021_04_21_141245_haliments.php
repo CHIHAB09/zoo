@@ -13,12 +13,11 @@ class Haliments extends Migration
      */
     public function up()
     {
-        Schema::create('aliments', function (Blueprint $table) {
+        Schema::create('haliments', function (Blueprint $table) {
             $table->id();
-            $table->string('receveur');
-            $table->int('quAdonner');
+            $table->integer('quAdonner');/* kilo */
             $table->timestamp('heure');
-            $table->int('nbDeFois');
+            /*receveur a pas oublier*/
 
         });
     }

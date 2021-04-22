@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CapDeCage extends Migration
+class HoraireParc extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CapDeCage extends Migration
      */
     public function up()
     {
-        Schema::create('capDeCage', function (Blueprint $table) {
+        Schema::create('horaireParc', function (Blueprint $table) {
             $table->id();
-            $table->int('capaciter');
-            $table->bool('disponible');
-
+            $table->string('rapportMedical');
+            $table->timestamp('dateRapport');
+            $table->unsignedBigInteger('animal_id');
         });
     }
 
@@ -28,6 +28,6 @@ class CapDeCage extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('capDeCage');
+        //
     }
 }

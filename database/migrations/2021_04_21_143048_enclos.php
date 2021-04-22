@@ -16,7 +16,8 @@ class Enclos extends Migration
         Schema::create('enclos', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->bool('actif');
+            $table->boolean('actif');/*disponibiliter*/
+            $table->integer('capaciter');
 
         });
     }

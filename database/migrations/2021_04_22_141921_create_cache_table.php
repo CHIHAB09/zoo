@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Medical extends Migration
+class CreateCacheTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class Medical extends Migration
      */
     public function up()
     {
-        Schema::create('medical', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('description');
-            $table->timestamp('dateArrive');
-            $table->timestamp('dateDepart');
+        Schema::create('cache', function (Blueprint $table) {
+            $table->string('key')->unique();
+            $table->mediumText('value');
+            $table->integer('expiration');
         });
     }
 
@@ -29,6 +27,6 @@ class Medical extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('medical');
+        Schema::dropIfExists('cache');
     }
 }

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Haliments extends Model
+class Medicals extends Model
 {
     use HasFactory;
 
@@ -16,11 +16,11 @@ class Haliments extends Model
      */
 
     protected $fillable = [
-        'quAdonner',
-        'heure'
+        'rapportMedical',
+        'dateRapport'
     ];
-
-    public function animalNouriture()
+    //relation avec la table Animaux
+    public function animalSoin()
     {
         return $this->belongsTo(Animaux::class);
     }
