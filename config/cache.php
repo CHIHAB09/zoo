@@ -30,7 +30,7 @@ return [
     |            "memcached", "redis", "dynamodb", "null"
     |
     */
-/* 
+
     'stores' => [
 
         'apc' => [
@@ -87,17 +87,6 @@ return [
             'table' => env('DYNAMODB_CACHE_TABLE', 'cache'),
             'endpoint' => env('DYNAMODB_ENDPOINT'),
         ],
-
-    ], */
-    'stores' => [
-
-        // ...
-
-        'none' => [
-            'driver' => 'null',
-        ],
-
-        // ...
 
     ],
 

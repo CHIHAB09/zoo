@@ -26,15 +26,23 @@ Route::get('/horaireAliment', function () {
 Route::get('/medical', function () {
 
     $animalSoin= new App\Models\Animaux();
-    $animalSoin->name = "Tomy le Gorille";
+    $animalSoin->name = 'Tomy le Gorille';
+    $animalSoin->dateEntrer = '04-04-2001';
+    $animalSoin->dateSortie = '';
+    $animalSoin->dateSortie = '07-02-1997';
+    $animalSoin->sexe = 'Femelle';
+    $animalSoin->poids = '241kg';
+    $animalSoin->sortieCage = 1;
+
+    $animalSoin->save();
 
     $medicaux= new App\Models\Medicals();
-    $medicaux->rapportMedical ="Premier diagnostic";
+    $medicaux->rapportMedical ="Deuxieme diagnostic";
     $medicaux->dateRapport = '2021-04-22';
-    $medicaux->animal_id = 5;
+    $medicaux->animal_id = 2;
 
     $medicaux->save(); 
-    var_dump($medicaux);
+
 });
 
 /* Route::get('/posts', function() {

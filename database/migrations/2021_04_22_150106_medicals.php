@@ -16,7 +16,7 @@ class Medicals extends Migration
         Schema::create('medicals', function (Blueprint $table) {
             $table->id();
             $table->string('rapportMedical');
-            $table->date('dateRapport')->nullable();
+            $table->timestamp('dateRapport')->nullable();
             $table->timestamps();
             $table->unsignedBigInteger('animal_id');
 
