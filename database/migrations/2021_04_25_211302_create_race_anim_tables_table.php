@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Aliments extends Migration
+class CreateRaceAnimTablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class Aliments extends Migration
      */
     public function up()
     {
-        Schema::create('aliments', function (Blueprint $table) {
+        Schema::create('race_anim_tables', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('quantite'); /* les mesures seront en kilo*/
+            $table->string('familleAnimal');/*mamifere,poisson,reptile*/
+            $table->integer('nbAnimal');
+            $table->integer('ageMaturite');
         });
     }
 
@@ -27,6 +28,6 @@ class Aliments extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aliments');
+        Schema::dropIfExists('race_anim_tables');
     }
 }

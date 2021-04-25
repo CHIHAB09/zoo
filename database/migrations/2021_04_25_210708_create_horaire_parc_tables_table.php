@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class RaceAnim extends Migration
+class CreateHoraireParcTablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class RaceAnim extends Migration
      */
     public function up()
     {
-        Schema::create('raceAnim', function (Blueprint $table) {
+        Schema::create('horaire_parc_tables', function (Blueprint $table) {
             $table->id();
-            $table->string('familleAnimaux');/*mamifere,poisson,reptile*/
-            $table->integer('nbAnimaux');
-            $table->integer('ageMaturite');
+            $table->string('rapportMedical');
+            $table->timestamp('dateRapport');
+            $table->unsignedBigInteger('animal_id');
         });
     }
 
@@ -28,6 +28,6 @@ class RaceAnim extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('raceAnim');
+        Schema::dropIfExists('horaire_parc_tables');
     }
 }

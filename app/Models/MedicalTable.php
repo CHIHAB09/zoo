@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Medicals extends Model
+class MedicalTable extends Model
 {
     use HasFactory;
 
-    /**
+     /**
      * The attributes that are mass assignable.
      *
      * @var array
@@ -19,9 +19,9 @@ class Medicals extends Model
         'rapportMedical',
         'dateRapport'
     ];
-    //relation avec la table Animaux
+    //relation avec la table Animals
     public function animalSoin()
     {
-        return $this->belongsTo(Animaux::class);
+        return $this->belongsTo(AnimalTable::class);
     }
 }

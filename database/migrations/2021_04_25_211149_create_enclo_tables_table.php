@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Animaux extends Migration
+class CreateEncloTablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class Animaux extends Migration
      */
     public function up()
     {
-        Schema::create('animaux', function (Blueprint $table) {
+        Schema::create('enclo_tables', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->timestamp('dateEntrer')->nullable();
-            $table->timestamp('dateSortie')->nullable();
-            $table->timestamp('dateNaissance')->nullable();
-            $table->string('sexe');
-            $table->integer('poids');
-            $table->boolean('sortieCage');
+            $table->boolean('actif');/*disponibiliter*/
+            $table->integer('capaciter');
         });
     }
 
@@ -32,6 +28,6 @@ class Animaux extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('animaux');
+        Schema::dropIfExists('enclo_tables');
     }
 }

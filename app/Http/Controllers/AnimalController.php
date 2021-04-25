@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AnimauxController extends Controller
+class AnimalController extends Controller
 {
     public function index()
     {

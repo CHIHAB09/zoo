@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Medicals extends Migration
+class CreateHalimentTablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class Medicals extends Migration
      */
     public function up()
     {
-        Schema::create('medicals', function (Blueprint $table) {
+        Schema::create('haliment', function (Blueprint $table) {
             $table->id();
-            $table->string('rapportMedical');
-            $table->timestamp('dateRapport')->nullable();
-            $table->timestamps();
-            $table->unsignedBigInteger('animal_id');
+            $table->integer('quAdonner');/* kilo */
+            $table->timestamp('heure');
+            /*receveur a pas oublier*/
 
         });
     }
@@ -30,6 +29,6 @@ class Medicals extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('haliment_tables');
     }
 }

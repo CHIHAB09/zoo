@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class HoraireParc extends Migration
+class CreateMedicalTablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class HoraireParc extends Migration
      */
     public function up()
     {
-        Schema::create('horaireParc', function (Blueprint $table) {
+        Schema::create('medical_tables', function (Blueprint $table) {
             $table->id();
             $table->string('rapportMedical');
-            $table->timestamp('dateRapport');
+            $table->timestamp('dateRapport')->nullable();
+            $table->timestamps();
             $table->unsignedBigInteger('animal_id');
+
         });
     }
 
@@ -28,6 +30,6 @@ class HoraireParc extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('medical_tables');
     }
 }

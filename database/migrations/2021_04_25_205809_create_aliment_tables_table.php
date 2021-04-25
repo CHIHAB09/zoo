@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Haliments extends Migration
+class CreateAlimentTablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class Haliments extends Migration
      */
     public function up()
     {
-        Schema::create('haliments', function (Blueprint $table) {
+        Schema::create('aliment_tables', function (Blueprint $table) {
             $table->id();
-            $table->integer('quAdonner');/* kilo */
-            $table->timestamp('heure');
-            /*receveur a pas oublier*/
-
+            $table->string('name');
+            $table->integer('quantite'); /* les mesures seront en kilo*/
         });
     }
 
@@ -29,6 +27,6 @@ class Haliments extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('haliments');
+        Schema::dropIfExists('aliment_tables');
     }
 }

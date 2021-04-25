@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Haliments extends Model
+class HalimentTable extends Model
 {
     use HasFactory;
 
@@ -22,6 +22,6 @@ class Haliments extends Model
 
     public function animalNouriture()
     {
-        return $this->belongsTo(Animaux::class);
+        return $this->belongsTo(AnimalTable::class);
     }
 }

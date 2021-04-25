@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Animaux extends Model
+class AnimalTable extends Model
 {
     use HasFactory;
 
@@ -27,16 +27,16 @@ class Animaux extends Model
     //relation avec la table medicals
     public function medicaux()
     {
-        return $this->hasMany(Medicals::class);
+        return $this->hasMany(MedicalTable::class);
     }
     //relation avec la table race
     public function races()
     {
-        return $this->hasMany(RaceAnim::class);
+        return $this->hasMany(RaceAnimTable::class);
     }
     //relat avec la table haliment
-    public function horaireAlims()
+    public function horaireAlim()
     {
-        return $this->hasMany(Haliments::class);
+        return $this->hasMany(HalimentTable::class);
     }
 }
